@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 const bottomContainerHeight = 80.0;
 const activeCardColor = Color(0xFF1D1E33);
@@ -21,17 +22,26 @@ class InputPageState extends State<InputPage> {
           Expanded(
             child: Row(
               children: [
-                Expanded(child: ReusableCard(color: activeCardColor,)),
-                Expanded(child: ReusableCard(color: activeCardColor,)),
+                Expanded(
+                  child: ReusableCard(
+                    color: activeCardColor,
+                    cardChild: IconContent(label: 'MALE', icon: FontAwesomeIcons.mars),
+                  ),
+                ),
+
+                Expanded(child: ReusableCard(
+                  color: activeCardColor,
+                  cardChild: IconContent(label: 'FEMALE', icon: FontAwesomeIcons.venus),
+                  )),
               ],
             ),
           ),
-          Expanded(child: ReusableCard(color: activeCardColor,)),
+          Expanded(child: ReusableCard(color: activeCardColor)),
           Expanded(
             child: Row(
               children: [
-                Expanded(child: ReusableCard(color: activeCardColor,)),
-                Expanded(child: ReusableCard(color: activeCardColor,)),
+                Expanded(child: ReusableCard(color: activeCardColor)),
+                Expanded(child: ReusableCard(color: activeCardColor)),
               ],
             ),
           ),
@@ -47,10 +57,38 @@ class InputPageState extends State<InputPage> {
   }
 }
 
-class ReusableCard extends StatelessWidget {
+class IconContent extends StatelessWidget {
+  final String label;
+  final IconData icon;
+  const IconContent({super.key, required this.label, required this.icon});
 
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(
+          icon,
+          size: 80.0,
+          color: Colors.white,
+        ),
+        SizedBox(height: 15.0),
+        Text(
+          label,
+          style: TextStyle(
+            fontSize: 18.0,
+            color: Color(0xFF8D8E98),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class ReusableCard extends StatelessWidget {
   final Color color;
-  const ReusableCard({super.key, required this.color});
+  final Widget? cardChild;
+  const ReusableCard({super.key, required this.color, this.cardChild});
 
   @override
   Widget build(BuildContext context) {
@@ -61,6 +99,7 @@ class ReusableCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(10.0),
       ),
       height: 200.0,
+      child: cardChild,
     );
   }
 }
