@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../constants/constants.dart';
+import '../colors/my_colors.dart';
 
 class IconContent extends StatelessWidget {
   final String label;
@@ -13,7 +13,7 @@ class IconContent extends StatelessWidget {
       children: [
         Icon(icon, size: 80.0, color: Colors.white),
         SizedBox(height: 15.0),
-        Text(label, style: klabelTextStyle),
+        Text(label, style: blabelTextStyle),
       ],
     );
   }

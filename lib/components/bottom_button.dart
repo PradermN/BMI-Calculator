@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../constants/constants.dart';
+import '../colors/my_colors.dart';
+
 class BottomButton extends StatelessWidget {
   final VoidCallback? onTap;
   final String buttonTitle;
@@ -14,12 +15,12 @@ class BottomButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        color: kbottomContainerColor,
+        color: bbottomContainerColor,
         margin: EdgeInsets.only(top: 10.0),
         padding: EdgeInsets.only(bottom: 20.0),
         width: double.infinity,
-        height: kbottomContainerHeight,
-        child: Center(child: Text(buttonTitle, style: kLargeButtonTextStyle)),
+        height: bbottomContainerHeight,
+        child: Center(child: Text(buttonTitle, style: bLargeButtonTextStyle)),
       ),
     );
   }

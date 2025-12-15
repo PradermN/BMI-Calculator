@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'results_page.dart';
-import '../constants/constants.dart';
+import '../colors/my_colors.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../components/reusable_card.dart';
 import '../components/icon_content.dart';
@@ -41,8 +41,8 @@ class InputPageState extends State<InputPage> {
                       });
                     },
                     color: selectedGender == Gender.male
-                        ? kactiveCardColor
-                        : kinactiveCardColor,
+                        ? bactiveCardColor
+                        : binactiveCardColor,
                     cardChild: IconContent(
                       label: 'MALE',
                       icon: FontAwesomeIcons.mars,
@@ -58,8 +58,8 @@ class InputPageState extends State<InputPage> {
                       });
                     },
                     color: selectedGender == Gender.female
-                        ? kactiveCardColor
-                        : kinactiveCardColor,
+                        ? bactiveCardColor
+                        : binactiveCardColor,
                     cardChild: IconContent(
                       label: 'FEMALE',
                       icon: FontAwesomeIcons.venus,
@@ -71,18 +71,18 @@ class InputPageState extends State<InputPage> {
           ),
           Expanded(
             child: ReusableCard(
-              color: kactiveCardColor,
+              color: bactiveCardColor,
               cardChild: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('HEIGHT', style: klabelTextStyle),
+                  Text('HEIGHT', style: blabelTextStyle),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.baseline,
                     textBaseline: TextBaseline.alphabetic,
                     children: [
-                      Text(height.toString(), style: knumberTextStyle),
-                      Text('cm', style: klabelTextStyle),
+                      Text(height.toString(), style: bnumberTextStyle),
+                      Text('cm', style: blabelTextStyle),
                     ],
                   ),
                   SliderTheme(
@@ -118,12 +118,12 @@ class InputPageState extends State<InputPage> {
               children: [
                 Expanded(
                   child: ReusableCard(
-                    color: kactiveCardColor,
+                    color: bactiveCardColor,
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('WEIGHT', style: klabelTextStyle),
-                        Text(weight.toString(), style: knumberTextStyle),
+                        Text('WEIGHT', style: blabelTextStyle),
+                        Text(weight.toString(), style: bnumberTextStyle),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -152,12 +152,12 @@ class InputPageState extends State<InputPage> {
                 ),
                 Expanded(
                   child: ReusableCard(
-                    color: kactiveCardColor,
+                    color: bactiveCardColor,
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('AGE', style: klabelTextStyle),
-                        Text(age.toString(), style: knumberTextStyle),
+                        Text('AGE', style: blabelTextStyle),
+                        Text(age.toString(), style: bnumberTextStyle),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
