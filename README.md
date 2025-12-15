@@ -52,9 +52,9 @@ The app displays an interactive BMI calculator with the following features:
 
 ## 📸 Screenshot
 
-Keep your health in check with BMI Calculator! 💪✨
-
 ![screen1](https://github.com/user-attachments/assets/88a8b626-6bcc-4201-9258-3f563456e1f2)
 
 
 ![screen2](https://github.com/user-attachments/assets/5903eed1-a689-4195-92fe-76302c6efc7c)
+
+Keep your health in check with BMI Calculator! 💪✨
